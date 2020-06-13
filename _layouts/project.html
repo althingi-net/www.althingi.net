@@ -1,0 +1,52 @@
+---
+layout: page
+---
+
+{{ content }}
+
+<table>
+    {% if page.path %}
+    <tr>
+        <th>Slóð</th>
+        <td><a href="{{ page.project-path }}">{{ page.project-path }}</a></td>
+    </tr>
+    {% endif %}
+    {% if page.code-path %}
+    <tr>
+        <th>Kóði</th>
+        <td><a href="{{ page.code-path }}" target="_blank">{{ page.code-path }}</a></td>
+    </tr>
+    {% endif %}
+    {% if page.data-path %}
+    <tr>
+        <th>Gögn</th>
+        <td><a href="{{ page.data-path }}" target="_blank">{{ page.data-path }}</a></td>
+    </tr>
+    {% endif %}
+    {% if page.license %}
+    <tr>
+        <th>Leyfi</th>
+        <td>
+            {% if page.license-path %}
+                <a href="{{ page.license-path }}" target="_blank">{{ page.license }}</a>
+            {% else %}
+                {{ page.license }}
+            {% endif %}
+        </td>
+    </tr>
+    {% endif %}
+    {% if page.author %}
+    <tr>
+        <th>Höfundur</th>
+        <td>
+            {% if page.author-email %}
+                <a href="mailto:{{ page.author-email }}">{{ page.author }}</a> &lt;{{ page.author-email }}&gt;
+            {% else %}
+                {{ page.author }}
+            {% endif %}
+        </td>
+    </tr>
+    {% endif %}
+</table>
+
+
